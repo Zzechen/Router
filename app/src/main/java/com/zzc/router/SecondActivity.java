@@ -1,8 +1,10 @@
 package com.zzc.router;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import com.zzc.library.Path;
 import com.zzc.library.Router;
@@ -19,5 +21,10 @@ public class SecondActivity extends AppCompatActivity {
         Log.e(TAG, "onCreate," + bundleExtra.getString("time"));
         Log.e(TAG, "onCreate," + bundleExtra.getString("userId"));
         Log.e(TAG, "onCreate," + bundleExtra.getString(Router.constants.KEY_PATH));
+    }
+
+    public void back(View view) {
+        setResult(Activity.RESULT_OK);
+        finish();
     }
 }
